@@ -1,0 +1,1084 @@
+@import './scss(partial)/font';
+@include font_file;
+
+.body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  flex-flow:column;
+}
+
+.header{
+  height:90vw;
+  .video{
+    width:100%;
+    video{
+      width:100%;
+      display:block;
+    }
+
+    .logo-box{
+      width:200px;
+      opacity:0.7;
+      position:absolute;
+      left:3%;
+      top:5%;
+      @media (max-width:600px){
+        width:100px;
+      }
+      figure{
+        width:100%;
+        margin:0 auto;
+        img{
+          width:100%;
+        }
+      }
+    }
+
+    .anime-header-title{
+      animation-name:header-title;
+      animation-duration:3s;
+      animation-delay:1.2s;
+      animation-timing-function:cubic-bezier(0.52, 0.8, 0.88, 1.11);
+      @keyframes header-title{
+        0%{opacity:0;}
+        100%{opacity:1;}
+      }
+      .title{
+        width:80%;
+        position:absolute;
+        left:50vw;
+        top:40vw;
+        -webkit-transform : translateX(-50%);
+        transform : translateX(-50%);
+        h1{
+          font-size:14vw;
+          font-weight:bold;
+          font-style:italic;
+          font-family:Objective-Bold-Italic;
+          color:#7ad6bb;
+          line-height:1.3;
+        }
+      }
+    }
+  }
+}
+
+.main{
+  flex:1;
+  .section1{
+    width:57%;
+    margin:0 auto;
+    margin-top:5vh;
+    margin-bottom:30vh;
+    @media (max-width:600px){
+      width:80%;
+      margin-bottom:15vh;
+    }
+    .anime-section1-text{
+      animation-name:section1-text;
+      animation-duration:2.5s;
+      animation-timing-function:cubic-bezier(0.09,0.74,0.64,0.93);
+      @keyframes section1-text{
+        0%{opacity:0;}
+        100%{opacity:1;}
+      }
+      dt{
+        text-align:center;
+        margin-bottom:40px;
+        font-size:32px;
+        font-family:NotoSansJP-Bold;
+        @media (max-width:600px){
+          font-size:20px;
+        }
+      }
+      dd{
+        margin-bottom:40px;
+        font-size:24px;
+        font-family:NotoSansJP-Medium;
+        line-height:2;
+        @media (max-width:600px){
+          font-size:14px;
+        }
+      }
+    }
+  }
+
+/*各subtitle*/
+  @mixin titleSet{
+    font-size:60px;
+    font-family:Objective-Bold-Italic;
+    @media (max-width:600px){
+      font-size:40px;
+    }
+  }
+
+/*各subtitle*/
+  @mixin subtitle-anime{
+    animation-name:subtitle-anime;
+    animation-duration:3s;
+    animation-delay:0.3s;
+    animation-timing-function:cubic-bezier(0.18, 1, 0.65, 1);
+    @keyframes subtitle-anime{
+      from{opacity:0;}
+      to{opacity:1;}
+    }
+  }
+
+  .section2{
+    position:relative;
+    background-color:#f0f0f0;
+    text-align:center;
+    .anime-section2-title{
+      @include subtitle-anime;
+      .skills-box{
+        display:inline-block;
+        margin-top:20vh;
+        margin-bottom:15vh;
+        position:relative;
+        @media (max-width:600px){
+          margin-top:10vh;
+          margin-bottom:7.5vh;
+        }
+        &:before{
+          content:"Skills";
+          @include titleSet;
+          color:#f0f0f0;
+          -webkit-text-stroke: 1px #7ad6bb;
+          text-stroke: 1px #7ad6bb;
+          position:absolute;
+          left:5px;
+          top:-5px;
+        }
+        .skills{
+          @include titleSet;
+          position:relative;
+        }
+      }
+    }
+
+    .portfolio{
+      position:absolute;
+      top:11vh;
+      left:5vh;
+      width:478px;
+      -webkit-transform : translateX(-50%);
+      transform : translateX(-50%);
+      z-index:1;
+      @media (max-width:600px){
+        width:239px;
+        top:5.5vh;
+        left:2.5vh;
+      }
+      img{
+        width:100%;
+      }
+    }
+
+/*box-top*/
+    @mixin topSet-section2{
+      .top{
+        text-align:left;
+        p{
+          display:inline-block;
+        }
+
+        .top1{
+          font-size:32px;
+          font-family:NotoSansJP-Medium;
+          vertical-align:middle;
+          color:#454545;
+          @media (max-width:600px){
+            font-size:20px;
+          }
+        }
+
+        .top2{
+          font-size:100px;
+          font-family:Objective-Bold-Italic;
+          vertical-align:middle;
+          margin:0 10px;
+          @media (max-width:600px){
+            font-size:75px;
+          }
+        }
+
+        .top3{
+          font-size:20px;
+          font-family:NotoSansJP-Medium;
+          vertical-align:middle;
+          color:#454545;
+          @media (max-width:600px){
+            font-size:12px;
+          }
+        }
+      }
+    }
+
+/*box-img&text*/
+    @mixin img-textSet{
+      .img-text{
+        margin-top:50px;
+        position:relative;
+        display:flex;
+        justify-content:center;
+        z-index:100;
+        @media (max-width:600px){
+          flex-direction:column;
+        }
+
+        figure{
+          display:inline-block;
+          width:40%;
+          @media (max-width:600px){
+            width:80%;
+            margin:0 auto;
+          }
+          img{
+            width:100%;
+          }
+        }
+
+        .text{
+          display:inline-block;
+          width:34%;
+          text-align:left;
+          vertical-align:top;
+          font-size:20px;
+          font-family:NotoSansJP-Medium;
+          line-height:2;
+          @media (max-width:600px){
+            display:block;
+            margin:50px auto;
+            width:80%;
+            vertical-align:middle;
+            font-size:14px;
+          }
+        }
+      }
+    }
+
+    .anime-section2-coding{
+      animation-name:box1-anime;
+      animation-duration:2s;
+      animation-timing-function:cubic-bezier(0.01, 0.98, 0.47, 1);
+      @keyframes box1-anime{
+        0%{ opacity:0; transform:translateX(150%);}
+        100%{ opacity:1; transform:translateX(0);}
+      }
+    }
+
+    .coding-box{
+      width:100%;
+      position:relative;
+      padding-bottom:30vh;
+      @media (max-width:600px){
+        padding-bottom:5vh;
+      }
+      &:before{
+        position:absolute;
+        content:"";
+        width:65vw;
+        background-color:#7ad6bb;
+        padding-bottom:35%;
+        z-index:0;
+        left:0;
+        top:0;
+        @media (max-width:600px){
+          width:80vw;
+          padding-bottom:50%;
+        }
+      }
+      @include topSet-section2;
+      .top{
+        margin-left:20vw;
+        padding-top:10vh;
+        position:relative;
+        z-index:100;
+        @media (max-width:600px){
+          margin-left:auto;
+          text-align:center;
+        }
+      }
+      @include img-textSet;
+      .text{
+        margin-left:10vh;
+      }
+    }
+
+    .anime-section2-design{
+      @extend .anime-section2-coding;
+      animation-name:box2-anime;
+      @keyframes box2-anime{
+      0%{ opacity:0; transform:translateX(-150%);}
+      }
+    }
+
+    .design-box{
+      @extend .coding-box;
+      &:before{
+        left:auto;
+        right:0;
+      }
+      .top{
+        margin-right:20vw;
+        text-align:right;
+        @media (max-width:600px){
+          margin-right:auto;
+          text-align:center;
+        }
+      }
+      figure{
+        margin-left:10vh;
+        @media (max-width:600px){
+          margin-left:auto;
+          order:1;
+        }
+      }
+      .text{
+        margin-left:0;
+        @media (max-width:600px){
+          order:2;
+        }
+      }
+    }
+  }
+
+/*緑title*/
+  @mixin sub-titleSet{
+    display:inline-block;
+    font-size:24px;
+    font-family:Objective-Bold-Italic;
+    color:#7ad6bb;
+  }
+
+  .section3{
+    .content{
+      margin:0 5vh;
+      .time-line{
+        list-style:none;
+
+/*timeline上線*/
+        li:first-child{ //blockは内包物で幅取得できない為（またinline-blockは横並び）、flexboxにて子要素2つを縦並び
+          height:400px;
+          padding:0;
+          @media (max-width:600px){
+            height:200px;
+          }
+          &:after{
+            content:none;
+          }
+        }
+
+        .anime-section3-title{
+          display:flex;
+          flex-direction:column;
+          align-items:center;
+          margin-top:10vh;
+          @include subtitle-anime;
+            .works-sub{
+              @include sub-titleSet;
+              display:inline-block;
+            }
+
+          .works-box{
+            display:inline-block; //inline-blockじゃないと内包物の幅にならない
+            margin-top:40px;
+            position:relative;
+            @media (max-width:600px){
+              margin-top:20px;
+            }
+            &:before{
+              content:"Works";
+              @include titleSet;
+              color:#fff;
+              -webkit-text-stroke: 1px #7ad6bb;
+              text-stroke: 1px #7ad6bb;
+              position:absolute; //内包物の大きさ　右上:0位置スタート
+              left:5px;
+              top:-5px;
+            }
+            .works-main{
+              @include titleSet;
+              position:relative; //内包物
+            }
+          }
+        }
+
+
+/*timeline下線*/
+        li:last-child{
+          padding:0;
+          display:inline-block;
+          @media (max-width:600px){
+          }
+          &:after{
+            content:none;
+          }
+        }
+
+        .project{
+          display:flex;
+          width:70%;
+          color:#454545;
+          flex-direction:column;
+          margin:5vh auto 20vh auto;
+          width:60%;
+          @media (max-width:600px){
+            width:80%;
+            margin:5vh auto 5vh auto;
+          }
+          .project-sub{
+            font-size:32px;
+            font-family:NotoSansJP-Medium;
+            margin-right:auto;
+            @media (max-width:600px){
+              font-size:20px;
+            }
+          }
+          .project-main{
+            font-size:20px;
+            font-family:NotoSansJP-Medium;
+            line-height:2;
+            margin-top:20px;
+            @media (max-width:600px){
+              font-size:14px;
+            }
+          }
+        }
+
+        li{
+          position:relative;
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          padding:50px 20px;
+          @media (max-width:600px){
+            padding:25px 10px;
+          }
+          &:before,&:after{
+            content:"";
+            display:block;
+            position:absolute;
+            margin-left:20px;
+            @media (max-width:600px){
+              margin-left:10px;
+            }
+          }
+          &:before{
+            left:0;
+            width:1px;
+            height:100%;
+            background-color:#707070;
+          }
+          &:after{
+            top:50%;
+            -webkit-transform : translateY(-50%);
+            transform : translateY(-50%);
+            left:-25px;
+            width:16px;
+            height:16px;
+            border-radius:100%;
+            border:solid 17px #7ad6bb;
+            background-color:#ffffff;
+          }
+          .anime-section3-box{
+            display:flex;
+            justify-content:center;
+            animation-name:line-anime;
+            animation-duration:2s;
+            animation-timing-function:cubic-bezier(0.01, 0.98, 0.47, 1);
+            @keyframes line-anime{
+              0%{ opacity:0; transform:translateX(150%);}
+              100%{ opacity:1; transform:translateX(0);}
+            }
+
+
+          .width-limit{
+            width:90%;
+            display:flex;
+            justify-content:space-between;
+            flex-wrap:wrap;
+            @media (max-width:600px){
+              justify-content:center;
+            }
+            .time-img{
+              display:flex;
+              align-items:center;
+              justify-content:center;
+              position:relative;
+              width:45%;
+              @media (max-width:600px){
+                width:80%;
+                padding-top:30px;
+              }
+              figure{
+                width:100%;
+                position:relative;
+                img{
+                  width:100%;
+                }
+              }
+              .img-center{
+                position:absolute;
+                top:50%;
+                left:50%;
+                -webkit-transform: translate(-50%,-50%);
+                transform: translate(-50%,-50%);
+                width:100%;
+                text-align:center;
+                font-size:3vw;
+                font-family:Objective-Bold-Italic;
+              }
+            }
+
+            .time-text{
+              display:flex;
+              flex-direction:column;
+              width:52%;
+              margin-bottom:auto;
+              color:#454545;
+              @media (max-width:600px){
+                width:80%;
+                padding-top:30px;
+              }
+              time{
+                display:inline-block;
+                font-size:32px;
+                font-family:Objective-Medium;
+                margin-bottom:30px;
+                @media (max-width:600px){
+                  font-size:20px;
+                }
+              }
+              p{
+                display:inline-block;
+                font-size:20px;
+                font-family:NotoSansJP-Medium;
+                line-height:2;
+                @media (max-width:600px){
+                  font-size:14px;
+                }
+              }
+            }
+          }
+          }
+        }
+      }
+    }
+  }
+
+  .section4{
+    .gallery{
+      height:2000px;
+      background-color:#f0f0f0;
+      position:relative;
+      @media (max-width:600px){
+        height:auto;
+        position:static;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      @mixin gallery-textboxSet{
+        position:absolute;
+        -webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+        z-index:2;
+        width:60vw;
+        text-align:right;
+        @media (max-width:600px){
+          position:static;
+          -webkit-transform: translate(0,0);
+          transform: translate(0,0);
+          width:90%;
+          text-align:left;
+        }
+      }
+
+      .anime-section4-text1{
+        animation-name:text-anime;
+        animation-duration:1s;
+        animation-timing-function:cubic-bezier(0.4, 0.53, 0.65, 1);
+        @keyframes text-anime{
+          from{opacity:0;}
+          to{opacity:1;}
+        }
+      }
+
+      .anime-section4-text2{
+        @extend .anime-section4-text1;
+      }
+
+      .gallery-textboxA{
+        @include gallery-textboxSet;
+        top:20%;
+        left:55%;
+        @media (max-width:600px){
+          position:static;
+          order:1;
+          margin:10vh auto 5vh auto;
+        }
+        .top1{
+          font-size:32px;
+          font-family:NotoSansJP-Medium;
+          vertical-align:0.5em;
+          color:#454545;
+          @media (max-width:600px){
+            font-size:20px;
+            display:inline-block;
+          }
+        }
+        .top2{
+          font-size:100px;
+          font-family:Objective-Bold-Italic;
+          margin-left:50px;
+          @media (max-width:600px){
+            font-size:75px;
+            margin-left:auto;
+            display:inline-block;
+          }
+        }
+        .top3{
+          font-size:20px;
+          font-family:NotoSansJP-Medium;
+          vertical-align:middle;
+          color:#454545;
+          margin-bottom:20px;
+          @media (max-width:600px){
+            font-size:12px;
+            margin-bottom:auto;
+            display:inline-block;
+          }
+        }
+      .text{
+        margin-top:150px;
+        @media (max-width:600px){
+          margin-top:20px;
+        }
+        p{
+          display:inline-block;
+          width:40vw;
+          text-align:left;
+          line-height:2;
+          font-family:NotoSansJP-Medium;
+          font-size:20px;
+          @media (max-width:600px){
+            font-size:14px;
+            width:100%;
+          }
+        }
+      }
+    }
+    .gallery-textboxB{
+      @include gallery-textboxSet;
+      top:85%;
+      left:60%;
+      @media (max-width:600px){
+        position:static;
+        order:7;
+        margin:5vh auto 10vh auto;
+      }
+      .top{
+        margin-right:80px;
+        @media (max-width:600px){
+          margin-right:auto;
+        }
+        .top1{
+          font-size:32px;
+          font-family:NotoSansJP-Medium;
+          vertical-align:0.5em;
+          color:#454545;
+          @media (max-width:600px){
+            font-size:20px;
+            display:inline-block;
+          }
+        }
+        .top2{
+          font-size:100px;
+          font-family:Objective-Bold-Italic;
+          margin-left:40px;
+          @media (max-width:600px){
+            font-size:75px;
+            margin-left:auto;
+            display:inline-block;
+          }
+        }
+        .top3-sp{
+          display:none;
+          @media (max-width:600px){
+            display:inline-block;
+            font-size:12px;
+            font-family:NotoSansJP-Medium;
+            color:#454545;
+            vertical-align:middle;
+          }
+        }
+      }
+      .text{
+        margin-top:50px;
+        @media (max-width:600px){
+          margin-top:auto;
+        }
+        p{
+          display:inline-block;
+          line-height:2;
+          width:75%;
+          font-family:NotoSansJP-Medium;
+          font-size:20px;
+          text-align:left;
+          @media (max-width:600px){
+            font-size:14px;
+            width:100%;
+          }
+        }
+        .top3-pc{
+          width:50px;
+          font-size:32px;
+          font-family:NotoSansJP-Medium;
+          color:#454545;
+          vertical-align:top;
+          margin-left:50px;
+          @media (max-width:600px){
+            display:none;
+          }
+        }
+      }
+    }
+
+    .anime-section4-photo1{
+      animation-name:camera-anime;
+      animation-duration:3s;
+      animation-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1);
+      @keyframes camera-anime{
+        from{opacity:0;}
+        to{opacity:1;}
+      }
+    }
+
+    .anime-section4-photo2{
+      @extend .anime-section4-photo1;
+    }
+
+    .anime-section4-photo3{
+      @extend .anime-section4-photo1;
+    }
+
+    .anime-section4-photo4{
+      @extend .anime-section4-photo1;
+    }
+
+    .anime-section4-photo5{
+      @extend .anime-section4-photo1;
+    }
+
+    figure{
+      position:absolute;
+      z-index:1;
+      @media (max-width:600px){
+        position:static;
+      }
+      img{
+        width:100%;
+      }
+    }
+    .camera{
+      width:35%;
+      top:30%;
+      left:20%;
+      -webkit-transform:translate(-50%,-50%);
+      transform:translate(-50%,-50%);
+      @media (max-width:600px){
+        -webkit-transform:translate(0,0);
+        transform:translate(0,0);
+        width:90%;
+        order:2;
+      }
+    }
+    .iphone{
+      @extend .camera;
+      width:28%;
+      top:41%;
+      left:78%;
+      @media (max-width:600px){
+        width:30%;
+        order:3;
+      }
+    }
+    .note{
+      @extend .camera;
+      width:28%;
+      top:48%;
+      left:37%;
+      @media (max-width:600px){
+        width:30%;
+        order:4;
+      }
+    }
+    .macbook{
+      @extend .camera;
+      width:28%;
+      top:61%;
+      left:70%;
+      @media (max-width:600px){
+        width:30%;
+        order:5;
+      }
+    }
+    .coffe{
+      @extend .camera;
+      width:40%;
+      top:71%;
+      left:32%;
+      @media (max-width:600px){
+        width:90%;
+        order:6;
+      }
+    }
+
+    .anime-section4-backbox1{
+      animation-name:backbox-anime;
+      animation-duration:1s;
+      animation-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1);
+      @keyframes backbox-anime{
+        from{opacity:0;}
+        to{opacity:1;}
+      }
+    }
+
+    .anime-section4-backbox2{
+      @extend .anime-section4-backbox1;
+    }
+
+    .gallery-backbox1{
+      position:absolute;
+      top:40%;
+      left:40%;
+      width:40%;
+      -webkit-transform: translate(-50%,-50%);
+      transform: translate(-50%,-50%);
+      p{
+        padding-top:60%;
+        background-color:#7ad6bb;
+      }
+      @media (max-width:600px){
+        position:static;
+        display:none;
+      }
+    }
+    .gallery-backbox2{
+      @extend .gallery-backbox1;
+      top:76%;
+      left:57%;
+      @media (max-width:600px){
+        position:static;
+        display:none;
+      }
+    }
+  }
+}
+
+  .section5{
+    text-align:center;
+    .anime-section5-title{
+      @include subtitle-anime;
+      .history-box{
+        display:inline-block;
+        margin-top:20vh;
+        margin-bottom:15vh;
+        position:relative;
+        @media (max-width:600px){
+          margin-top:10vh;
+          margin-bottom:5vh;
+        }
+        &:before{
+          content:"History";
+          @include titleSet;
+          color:#fff;
+          -webkit-text-stroke: 1px #7ad6bb;
+          text-stroke: 1px #7ad6bb;
+          position:absolute;
+          left:5px;
+          top:-5px;
+        }
+        .history{
+          @include titleSet;
+          position:relative;
+        }
+      }
+    }
+
+    @mixin right-anime{
+      animation-name:right-anime;
+      animation-duration:2.5s;
+      animation-timing-function:cubic-bezier(0.01, 0.98, 0.47, 1);
+      @keyframes right-anime{
+        0%{ opacity:0; transform:translateX(150%);}
+        100%{ opacity:1; transform:translateX(0);}
+      }
+    }
+
+    @mixin left-anime{
+      animation-name:left-anime;
+      animation-duration:2.5s;
+      animation-timing-function:ease;
+      @keyframes left-anime{
+        0%{ opacity:0; transform:translateX(-150%);}
+        100%{ opacity:1; transform:translateX(0);}
+      }
+    }
+
+    table{
+      margin:0 auto;
+      margin-bottom:20vh;
+      width:75%;
+      border-collapse:separate; /*reset.css collapse→separate変更*/
+      border-spacing:20px;
+      @media (max-width:600px){
+        width:90%;
+        margin-bottom:5vh;
+      }
+      .left-cell{
+        width:20%;
+        .table-left{
+          border-top:solid 2px #7ad6bb;
+          text-align:right;
+          .left-text{
+            padding:40px 0;
+            font-size:20px;
+            font-weight:bold;
+            font-style:italic;
+            font-family:Objective-Bold-Italic;
+            line-height:2;
+            color:#7ad6bb;
+            @media (max-width:600px){
+              font-size:14px;
+            }
+          }
+        }
+      }
+      .right-cell{
+        width:80%;
+        .table-right{
+          border-top:solid 1px #000000;
+          text-align:left;
+          .right-text{
+            padding:40px 0;
+            font-size:20px;
+            font-weight:bold;
+            font-style:italic;
+            font-family:Objective-Bold-Italic;
+            line-height:2;
+            @media (max-width:600px){
+              font-size:14px;
+            }
+          }
+        }
+      }
+      .anime-section5-right{
+        @include right-anime;
+      }
+      .anime-section5-left{
+        @include left-anime;
+      }
+    }
+  }
+
+  .section6{
+    width:100%;
+    .section6-top{
+      width:100%;
+      background-color:#262626;
+      text-align:center;
+      .anime-section6-title{
+        @include subtitle-anime;
+        .section6-title{
+          display:inline-block;
+          width:60%;
+          margin-top:20vh;
+          margin-bottom:15vh;
+          @media (max-width:600px){
+            margin-top:10vh;
+            margin-bottom:7.5vh;
+          }
+          .title-sub{
+            @include sub-titleSet;
+          }
+          .title-main{
+            font-size:48px;
+            font-family:NotoSansJP-Medium;
+            margin-top:50px;
+            color:white;
+            text-align:left;
+            @media (max-width:600px){
+              font-size:40px;
+            }
+          }
+        }
+      }
+    }
+
+    .swiper-container{
+    width:100%;
+    text-align:center;
+    .swiper-wrapper{
+      width:100%;
+      .swiper-slide{
+        img{
+          width:100%;
+        }
+      }
+    }
+  }
+
+    .section6-bottom{
+      background-image:url(img/jpg/pc.jpg);
+      background-repeat:no-repeat;
+      background-position:bottom;
+      background-size:cover;
+      .cover{
+        background:#262626;
+        opacity:0.91;
+        .text-box{
+          width:55%;
+          margin:0 auto;
+          padding-top:20vh;
+          padding-bottom:20vh;
+          animation-name:float-anime;
+          animation-duration:2.5s;
+          animation-iteration-count:infinite;
+          animation-timing-function:cubic-bezier(.18,.05,.53,.97);
+          @media (max-width:600px){
+            width:80%;
+          }
+          @keyframes float-anime{
+            0%{transform:translateY(0);}
+            50%{transform:translateY(3%);}
+            100%{transform:translateY(0);}
+          }
+          p{
+            text-align:left;
+            color:white;
+            font-size:20px;
+            font-family:NotoSansJP-Medium;
+            line-height:2;
+            margin-bottom:50px;
+            @media (max-width:600px){
+              font-size:14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+  .footer{
+    width:100%;
+    height:30vh;
+    background-color:#7ad6bb;
+    @media (max-width:600px){
+      height:15vh;
+    }
+  }

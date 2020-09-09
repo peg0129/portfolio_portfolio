@@ -1,0 +1,26 @@
+@mixin font_file{
+  @font-face {
+  font-family:Objective-Bold-Italic;
+  src:url(localfonts/Objective-Bold-Italic.woff2);
+  }
+
+  @font-face {
+  font-family:Objective-Bold;
+  src:url(localfonts/Objective-Bold.woff2);
+  }
+
+  @font-face {
+  font-family:Objective-Medium;
+  src:url(localfonts/Objective-Medium.woff2);
+  }
+
+  @font-face {
+  font-family:NotoSansJP-Bold;
+  src:url(localfonts/NotoSansJP-Bold.otf);
+  }
+
+  @font-face {
+  font-family:NotoSansJP-Medium;
+  src:url(localfonts/NotoSansJP-Medium.otf);
+  }
+}
